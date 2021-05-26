@@ -32,9 +32,6 @@ use ParagonIE\ConstantTime\Binary;
  */
 trait PasswordLengthChecker
 {
-    /** @const int MAX_LENGTH The max length of the password. */
-    const MAX_LENGTH = 72;
-
     /**
      * Check to see if a password is too long.
      *
@@ -45,6 +42,6 @@ trait PasswordLengthChecker
      */
     public function isPasswordTooLong(string $password): bool
     {
-        return Binary::safeStrlen($password) > self::MAX_LENGTH;
+        return Binary::safeStrlen($password) > 72;
     }
 }
