@@ -16,9 +16,10 @@
         "vimeo/psalm": "^4.7"
     },
     "autoload": {
-        "psr-4": {
-            "Vuro\\PasswordHashing": "./src"
-        }
+        "psr-4": { "Vuro\\PasswordHashing": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
     },
     "scripts": {
         "test": "vendor/bin/phpunit"
