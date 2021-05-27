@@ -32,7 +32,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 /**
  * The password hasher.
  */
-final class StandardPasswordHasher implements PasswordHasherInterface
+final class StandardPasswordHasher extends AbstractPasswordHasher implements PasswordHasherInterface
 {
     use PasswordLengthChecker;
 
