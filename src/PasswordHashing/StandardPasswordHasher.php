@@ -26,7 +26,6 @@
 namespace Vuro\PasswordHashing;
 
 use InvalidArgumentException;
-use ParagonIE\ConstantTime\Binary;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
