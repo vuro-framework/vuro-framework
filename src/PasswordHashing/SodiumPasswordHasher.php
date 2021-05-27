@@ -25,6 +25,8 @@
 
 namespace Vuro\PasswordHashing;
 
+use InvalidArgumentException;
+
 /**
  * The sodium password hasher.
  */
