@@ -71,6 +71,19 @@ class SodiumPasswordHasherTest extends TestCase
     /**
      * @return void Returns nothing.
      */
+    public function testHasherAbstraction(): void
+    {
+        $hasher = new PasswordHasher();
+        $this->assertInstanceOf(PasswordHasher::class, $hasher);
+        $password = $hasher['password'];
+        $this->assertTrue(is_string($password));
+        $this->assertTrue(!$hasher->verify('incorrect', $password));
+        $this->assertTrue($hasher->verify('password', $password));
+    }
+
+    /**
+     * @return void Returns nothing.
+     */
     public function testBcrypt2SodiumRehash(): void
     {
         $hasher = new PwHasher(PASSWORD_BCRYPT);
