@@ -28,7 +28,7 @@ namespace Vuro\PasswordHashing;
 /**
  * The sodium password hasher.
  */
-class SodiumPasswordHasher implements PasswordHasherInterface
+class SodiumPasswordHasher extends AbstractPasswordHasher implements PasswordHasherInterface
 {
     /**
      * Compute the user's passwod hash.
