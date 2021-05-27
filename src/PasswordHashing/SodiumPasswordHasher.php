@@ -30,6 +30,8 @@ namespace Vuro\PasswordHashing;
  */
 final class SodiumPasswordHasher extends AbstractPasswordHasher implements PasswordHasherInterface
 {
+    use PasswordLengthChecker;
+
     /**
      * Compute the user's passwod hash.
      *
@@ -39,6 +41,9 @@ final class SodiumPasswordHasher extends AbstractPasswordHasher implements Passw
      */
     public function compute(string $password): string|false
     {
+        if ($this->isPasswordTooLong($password)) {
+            throw new InvalidArgumentException('The password supplied is too long.');
+        }
         $generatedHash = sodium_crypto_pwhash_str(
             $password,
             SODIUM_CRYPTO_PWHASH_OPSLIMIT_INTERACTIVE,
