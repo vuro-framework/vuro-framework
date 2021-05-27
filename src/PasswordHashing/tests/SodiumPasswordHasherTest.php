@@ -118,3 +118,4 @@ class SodiumPasswordHasherTest extends TestCase
         $this->assertTrue(is_string($password));
         $this->assertTrue(!$hasher2->needsRehash($password));
     }
+}
