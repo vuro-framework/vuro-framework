@@ -34,12 +34,8 @@ use RuntimeException;
 class AbstractPasswordHasher implements ArrayAccess
 {
     /**
-     * Whether an offset exists.
      * Type-Hints are not needed for this method.
-     *
-     * @param mixed $offset An offset to check for.
-     *
-     * @return bool Returns true on success or false on failure. 
+     * This method is not supported.
      */
     public function offsetExists($offset)
     {
@@ -47,10 +43,10 @@ class AbstractPasswordHasher implements ArrayAccess
     }
 
     /**
-     * Offset to retrieve.
+     * Compute a hash.
      * Type-Hints are not needed for this method.
      *
-     * @param mixed $offset The offset to retrieve.
+     * @param mixed $offset The password to hash.
      *
      * @return mixed Can return all value types.
      */
@@ -60,13 +56,8 @@ class AbstractPasswordHasher implements ArrayAccess
     }
 
     /**
-     * Assign a value to the specified offset.
      * Type-Hints are not needed for this method.
-     *
-     * @param mixed $offset The offset to assign the value to. 
-     * @param mixed $value  The value to set.
-     *
-     * @return void No value is returned.
+     * This method is not supported.
      */
     public function offsetSet($offset, $value)
     {
@@ -74,12 +65,8 @@ class AbstractPasswordHasher implements ArrayAccess
     }
 
     /**
-     * Unset an offset.
      * Type-Hints are not needed for this method.
-     *
-     * @param mixed $offset The offset to unset. 
-     *
-     * @return void No value is returned. 
+     * This method is not supported.
      */
     public function offsetUnset($offset)
     {
