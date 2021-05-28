@@ -31,7 +31,7 @@ use RuntimeException;
 /**
  * The sodium password hasher.
  */
-class AbstractPasswordHasher implements ArrayAccess
+abstract class AbstractPasswordHasher implements ArrayAccess
 {
     /**
      * Type-Hints are not needed for this method.
