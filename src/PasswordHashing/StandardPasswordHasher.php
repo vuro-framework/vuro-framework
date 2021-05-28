@@ -65,7 +65,9 @@ final class StandardPasswordHasher extends AbstractPasswordHasher implements Pas
         if ($this->isPasswordTooLong($password)) {
             throw new InvalidArgumentException('The password supplied is too long.');
         }
-        return password_hash($password, $this->passwordAlgo, $this->options);
+        $generatedHash = password_hash($password, $this->passwordAlgo, $this->options);
+        sodium_memzero($password);
+        return $generatedHash;
     }
 
     /**
@@ -78,7 +80,9 @@ final class StandardPasswordHasher extends AbstractPasswordHasher implements Pas
      */
     public function verify(string $password, string $hash): bool
     {
-        return password_verify($password, $hash);
+        $verified = password_verify($password, $hash);
+        sodium_memzero($password);
+        return $verified;
     }
 
     /**
